@@ -251,10 +251,51 @@
             line-height: 1.6;
         }
 
-        .contract-list { background: rgba(0,0,0,0.4); border-radius: 8px; padding: 10px; margin-bottom: 15px; border: 1px solid rgba(255,255,255,0.05); }
-        .contract-item { display: flex; justify-content: space-between; align-items: center; font-size: 12px; }
-        .contract-badge { background: var(--neon-red); color: white; padding: 4px 8px; border-radius: 4px; font-weight: bold; }
+.contract-list { 
+    background: rgba(0,0,0,0.4); 
+    border-radius: 8px; 
+    padding: 10px; 
+    margin-bottom: 15px; 
+    border: 1px solid rgba(255,255,255,0.05); 
+}
+.contract-item { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    font-size: 12px; 
+}
+.contract-badge { 
+    background: var(--neon-red); 
+    color: white; 
+    padding: 4px 8px; 
+    border-radius: 4px; 
+    font-weight: bold; 
+}
 
+/* سجل عمليات البلوكشين المباشر */
+.live-feed-box {
+    background-color: #08090d;
+    border: 1px dashed var(--neon-cyan);
+    border-radius: 8px;
+    padding: 10px;
+    height: 80px;
+    overflow-y: auto;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 11px;
+    color: #2ecc71;
+    text-align: right;
+    margin-bottom: 15px;
+}
+خطوات للتأكد من الإصلاح:
+ابحث عن أي /* قبل السطر 254 وتأكد أنها مغلقة بـ */. أي تعليق تفتحه يجب أن تغلقه قبل بداية أي كود جديد.
+
+في الصورة الأخيرة التي أرسلتها، السطر 254 هو: .contract-list { .... تأكد أنه لا يوجد /* قبلها لم يتم إغلاقه.
+
+امسح أي فراغات غريبة في بداية السطر 254 و 255.
+
+قم بعمل Save في GitHub وانتظر ظهور "الصح الأخضر" في صفحة الـ Actions كما في الصورة التي أرسلتها سابقاً، فهذا يعني أن الكود أصبح سليماً.
+
+هل قمت بحذف أي /* إضافي من الأعلى؟ حاول تصحيح الإغلاق (إضافة */) وستختفي رسالة الخطأ فوراً! 🦅🔥
         /* سجل عمليات البلوكشين المباشر */
         .live-feed-box {
             background-color: #08090d;
