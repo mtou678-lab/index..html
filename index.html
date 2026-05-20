@@ -503,24 +503,15 @@
                         }
                     } catch(e) { console.log("لاعب عادي."); }
                     await updateContractBalance();
-                } catch (e) { 
-                    activateSimulatedWallet();
-                }
-            } else {
-                activateSimulatedWallet();
-            }
+                } catch (e) {
+            alert("فشل الاتصال: تأكد من إلغاء قفل المحفظة.");
         }
-
-        function activateSimulatedWallet() {
-            walletAddress = "0xSystemAdminSimulatedWalletAddress";
-            document.getElementById('walletBtn').innerText = "✅ متصل (محاكاة أمنية للهاتف)";
-            document.getElementById('walletBtn').style.background = "#1f4068";
-            document.getElementById("adminPanel").style.display = "block"; 
-            addLog("تم تشغيل بروتوكول محاكاة المحفظة الذكية لتجنب القفل.");
-            updateContractBalance();
-        }
-
-        function enterSyndicateHub(mode) {
+    } else {
+        // إذا لم تجد أي محفظة على الإطلاق
+        alert("لا توجد محفظة تدعم Web3 في هذا المتصفح. يرجى فتح الموقع من متصفح المحفظة (Browser).");
+    }
+        
+       function enterSyndicateHub(mode) {
             playSyndicateSound('click');
             if (!walletAddress) { connectWeb3Wallet(); }
             
