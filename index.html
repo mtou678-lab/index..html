@@ -447,10 +447,8 @@
                    const balance = await provider.getBalance(contractAddress);
                     document.getElementById("contractBalance").innerText = parseFloat(ethers.utils.formatEther(balance)).toFixed(4) + " ETH";
                 } catch (e) { document.getElementById("contractBalance").innerText = "0.00 ETH"; }
-            } else {
-                document.getElementById("contractBalance").innerText = "1.420 ETH (محاكاة)";
+            } 
             }
-        }
 
         const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
         function playSyndicateSound(type) {
